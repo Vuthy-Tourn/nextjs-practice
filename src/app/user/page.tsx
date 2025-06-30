@@ -34,7 +34,7 @@ export default function Page() {
         setFilter(result);
       })
       .catch((error) => console.error("Error fetching users:", error));
-  });
+  },[searchParams,searchTerm,users]);
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;

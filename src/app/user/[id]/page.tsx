@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { UserType } from "@/types/UserType";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "@/app/loading";
 interface PageProps {
   params: {

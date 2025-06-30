@@ -9,9 +9,7 @@ export default function page() {
     const blogs = getBlog();
   return (
     <div>
-      <div className="">
         <BlogCard blogs={blogs} />
-      </div>
     </div>
   );
 }

@@ -38,8 +38,8 @@ Visit http://localhost:3000 to view your project in the browser.
 | Server Fetching | `/product` | Using `getServerSideProps` or `getStaticProps` for prefetching |
 | use Hook        | `/blog`    | Creating custom reusable React hooks for fetching data         |
 | use SWR         | `/recipe`  | Implementing client-side fetching with caching using SWR       |
-
-
+| useParams         | `/blog/${id}`  | read a route's dynamic
+params filled in by the current URL. |
 
 ### 🧭 Routing Features
 | Lesson             | Folder   | Description                                              |
@@ -47,3 +47,7 @@ Visit http://localhost:3000 to view your project in the browser.
 | Intercepting Route | `/photos` | Using intercepting and parallel routes with route groups |
 
 
+### 🛠️ Fonts
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| Two fonts and languages| `/`      | Local font and Google font (Khmer and English)       |

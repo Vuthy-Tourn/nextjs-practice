@@ -11,7 +11,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
   return (
     <div className="bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 p-4 max-w-7xl mx-auto">
       {allBlogs.map((blog) => (
-        <div key={blog.id}>
+        <Link key={blog.id} href={`/blog/${blog.id}`}>
           {/* Post Header */}
           <div className="flex items-center justify-between p-3 insta-border">
             <div className="flex items-center space-x-3">
@@ -27,10 +27,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
                 username_here
               </span>
             </div>
-            <button
-              aria-label="More options"
-              className="text-gray-900"
-            >
+            <button aria-label="More options" className="text-gray-900">
               <svg
                 className="w-5 h-5"
                 fill="currentColor"
@@ -154,14 +151,13 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
           </div>
 
           {/* View Comments */}
-          <div className="px-4 pb-2">
-            <Link
-              href="#"
-              className="text-sm text-gray-500 dark:text-gray-400 hover:underline"
-            >
-              View all {blog.views} comments
-            </Link>
-          </div>
+
+          <Link
+            href="#"
+            className="text-sm text-gray-500 dark:text-gray-400 hover:underline px-4 pb-2"
+          >
+            View all {blog.views} comments
+          </Link>
 
           {/* Add Comment */}
           <div className="px-4 pb-4 border-t insta-border mt-2 pt-3">
@@ -182,7 +178,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
               </button>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { products } from "@/data/product";
+// import { products } from "@/data/product";
 import { ProductType } from "@/types/ProductType";
 interface PageProps {
   params: {
