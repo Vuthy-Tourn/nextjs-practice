@@ -1,9 +1,10 @@
 import Link from "next/link";
 import photos, { PhotoType } from "@/data/photos";
 import PhotoCard from "@/components/photos/PhotoCard";
+import { PageProps } from "@/types/ParamType";
 
-export default function PhotoPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function PhotoPage({ params }: PageProps) {
+  const { id } = await params;
   const photo: PhotoType = photos.find((p) => p.id === id)!;
 
   return (

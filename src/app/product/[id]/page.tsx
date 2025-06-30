@@ -2,12 +2,10 @@ import React from "react";
 import Image from "next/image";
 // import { products } from "@/data/product";
 import { ProductType } from "@/types/ProductType";
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+import { PageProps } from "@/types/ParamType";
+
 async function getProduct(id:string) {
+  
    const BASE_URL = `${process.env.BASE_URL}products/${id}`;
    const res = await fetch(BASE_URL);
    if (!res.ok) {
@@ -18,7 +16,8 @@ async function getProduct(id:string) {
    return products;
 }
 export default async function ProductPage({ params }: PageProps) {
-  const product = await getProduct(params.id) // Convert string to number
+  const {id} = await params
+  const product = await getProduct(id) // Convert string to number
  
   // const product = products.find((p) => p.id === productId);
 

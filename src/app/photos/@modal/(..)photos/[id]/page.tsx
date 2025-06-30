@@ -1,10 +1,20 @@
 import Modal from "@/components/photos/Modal";
 import PhotoCard from "@/components/photos/PhotoCard";
-import photos, { PhotoType } from "@/data/photos";
+import photos from "@/data/photos";
 
-export default function PhotoModal({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const photo: PhotoType = photos.find((p) => p.id === id)!;
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+export default async function PhotoModal({ params }: PageProps) {
+  const {id} = await params
+  const photo = photos.find((p) => p.id === id);
+
+  if (!photo) {
+    return <div>Photo not found</div>;
+  }
 
   return (
     <Modal>

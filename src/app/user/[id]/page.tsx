@@ -3,25 +3,19 @@
 import Image from "next/image";
 import { UserType } from "@/types/UserType";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Loading from "@/app/loading";
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+import { PageProps } from "@/types/ParamType";
 
 export default function UserDetailPage({ params }: PageProps) {
-  const userId = params.id;
-
   const [user, setUser] = useState<UserType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+    const { id } = use(params);
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}users/${userId}`;
+        const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}users/${id}`;
         const res = await fetch(BASE_URL);
         if (!res.ok) {
           throw new Error("Failed to fetch user");
@@ -38,12 +32,10 @@ export default function UserDetailPage({ params }: PageProps) {
     };
 
     fetchUser();
-  }, [userId]);
+  }, [id]);
 
   if (loading) {
-    return (
-      <Loading/>
-    );
+    return <Loading />;
   }
 
   if (error) {
@@ -65,7 +57,6 @@ export default function UserDetailPage({ params }: PageProps) {
       </div>
     );
   }
-
   return (
     <section
       className="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover min-h-screen"
