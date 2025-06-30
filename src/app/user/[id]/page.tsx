@@ -11,7 +11,7 @@ export default function UserDetailPage({ params }: PageProps) {
   const [user, setUser] = useState<UserType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-    const { id } = use(params);
+  const { id } = use(params);
   useEffect(() => {
     const fetchUser = async () => {
       try {
