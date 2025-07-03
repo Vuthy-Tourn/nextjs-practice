@@ -1,24 +1,57 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Image from "next/image";
 // import { products } from "@/data/product";
 import { ProductType } from "@/types/ProductType";
 import { PageProps } from "@/types/ParamType";
+import { Metadata } from "next";
 
-async function getProduct(id:string) {
-  
-   const BASE_URL = `${process.env.BASE_URL}products/${id}`;
-   const res = await fetch(BASE_URL);
-   if (!res.ok) {
-     throw new Error("Failed to fetch products");
-   }
-    const data = (await res).json();
-   const products: ProductType = await data;
-   return products;
+export async function generateMetadata(
+  // ✅ Let Next.js infer the correct type
+  props: any
+): Promise<Metadata> {
+  const { params } = props;
+
+  try {
+    const res = await fetch(
+      `${process.env.BASE_URL}products/${params.id}`
+    );
+    if (!res.ok) {
+      return { title: "Product not found" };
+    }
+
+    const product = await res.json();
+
+    return {
+      title: product?.title ?? "Product Detail",
+      description: product?.description ?? "",
+      openGraph: {
+        title: product?.title,
+        description: product?.description,
+        images: [product?.thumbnail],
+      },
+    };
+  } catch {
+    return {
+      title: "Product not found",
+    };
+  }
+}
+
+async function getProduct(id: string) {
+  const BASE_URL = `${process.env.BASE_URL}products/${id}`;
+  const res = await fetch(BASE_URL);
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+  const data = (await res).json();
+  const products: ProductType = await data;
+  return products;
 }
 export default async function ProductPage({ params }: PageProps) {
-  const {id} = await params
-  const product = await getProduct(id) // Convert string to number
- 
+  const { id } = await params;
+  const product = await getProduct(id); // Convert string to number
+
   // const product = products.find((p) => p.id === productId);
 
   if (!product) {
@@ -212,7 +245,10 @@ export default async function ProductPage({ params }: PageProps) {
                     <strong>Brand:</strong> {product.shippingInformation}
                   </li>
                   <li className="text-gray-700 mb-2">
-                    <strong>Category:</strong> <span className="text-green-500">{product.availabilityStatus}</span>
+                    <strong>Category:</strong>{" "}
+                    <span className="text-green-500">
+                      {product.availabilityStatus}
+                    </span>
                   </li>
                 </ul>
               </div>
