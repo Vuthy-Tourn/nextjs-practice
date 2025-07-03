@@ -19,16 +19,16 @@ export async function generateMetadata(
 
     return {
       title:
-        user?.firstname && user?.lastname
-          ? `${user.firstname} ${user.lastname}`
+        user?.firstName && user?.lastName
+          ? `${user.firstName} ${user.lastnName}`
           : user?.title ?? "User Detail",
-      description: user?.description ?? "",
+      description: user?.email ?? "",
       openGraph: {
         title:
-          user?.firstname && user?.lastname
-            ? `${user.firstname} ${user.lastname}`
+          user?.firstName && user?.lastName
+            ? `${user.firstName} ${user.lastName}`
             : user?.title,
-        description: user?.description,
+        description: user?.email,
         images: [user?.image],
       },
     };
