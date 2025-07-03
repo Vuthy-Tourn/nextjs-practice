@@ -50,3 +50,9 @@ Visit http://localhost:3000 to view your project in the browser.
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
 | Two fonts and languages| `/`      | Local font and Google font (Khmer and English)       |
+
+### 🪢 Dynamic MetaData
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| dynamic MetaData   | `/product/{id}`| Dynamic by the each product `id`                   |
+| dynamic MetaData   | `/user/{id}`| Dynamic by the each user `id`                   |
