@@ -56,3 +56,53 @@ Visit http://localhost:3000 to view your project in the browser.
 | ------------------ | -------- | -------------------------------------------------------- |
 | dynamic MetaData   | `/product/{id}`| Dynamic by the each product `id`                   |
 | dynamic MetaData   | `/user/{id}`| Dynamic by the each user `id`                   |
+
+### 🗳️ Additional File
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| robots.txt   | `/robots.txt`| tells search engines where should and should NOT to go.    |
+| sitemap.ts   | `/sitemap.ts`| tells search engines what to look at                   |
+
+## About sitemap
+
+Each object in the array represents one page (URL) in your website's sitemap.
+
+Let’s explain the keys:
+
+| Key              | Description |
+|------------------|-------------|
+| `url`            | The full URL of the page. |
+| `lastModified`   | Tells search engines when the page was last updated. `new Date()` sets it to the current date/time. |
+| `changeFrequency`| Suggests how often this page changes: values like `'daily'`, `'weekly'`, `'monthly'`, `'yearly'`, etc. |
+| `priority`       | A number from `0.0` to `1.0` that suggests the importance of the page. `1.0` = highest priority. |
+
+---
+
+### 🗺️ What This Does
+
+When this function is used in Next.js under the `app` directory (like `app/sitemap.ts`), Next.js **automatically serves the sitemap at `/sitemap.xml`** during build or runtime. It generates the proper XML structure behind the scenes.
+
+---
+
+### ✅ Example Use Case
+
+| Page            | Frequency | Priority |
+|-----------------|-----------|----------|
+| `/` (Home)      | Yearly    | 1.0      |
+| `/product`        | Weekly   | 0.8      |
+| `/user`         | Monthly    | 0.7      |
+| `/about`         | Weekly    | 0.5      |
+
+This tells search engines:
+- "Home doesn’t change often, but it’s important."
+- "Product updates regularly, so check it more frequently."
+
+---
+
+### 🛠️ When to Use
+
+Use this `sitemap.ts` file when:
+- You want **Next.js to generate a sitemap automatically**
+- You want to give search engines hints on how to crawl your site
+
+---
