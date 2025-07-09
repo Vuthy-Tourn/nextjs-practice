@@ -57,7 +57,12 @@ Visit http://localhost:3000 to view your project in the browser.
 | dynamic MetaData   | `/product/{id}`| Dynamic by the each product `id`                   |
 | dynamic MetaData   | `/user/{id}`| Dynamic by the each user `id`                   |
 
-### 🗳️ Additional File
+### 🧑🏻‍💼 Admin Dashboard
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| Admin dashboard    | `(admin)/dashboard`| datatable and sidebar in dashboard using shadcn   |
+
+### 🗳️ Additional Files
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
 | robots.txt   | `/robots.txt`| tells search engines where should and should NOT to go.    |

@@ -7,6 +7,7 @@ import Loading from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
 import localFont from "next/font/local";
+import NavbarWrapper from "@/components/header/NavbarWrapper";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -57,7 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${ubuntu.variable} ${khmerFont.variable} antialiased`}>
         <ErrorBoundary errorComponent={Error}>
-          <NavbarComponent />
+          <NavbarWrapper />
           <Suspense fallback={<Loading />}>
             {modal}
             {children}
