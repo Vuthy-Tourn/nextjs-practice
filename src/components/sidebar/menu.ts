@@ -1,15 +1,15 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Calendar, Home, Search, Settings,Table } from "lucide-react";
 // Menu items.
 export const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/dashboard",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "DataTable with raw data",
+    url: "/dataTable",
+    icon: Table,
   },
   {
     title: "Calendar",

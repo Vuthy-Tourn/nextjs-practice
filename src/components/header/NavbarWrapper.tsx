@@ -5,7 +5,7 @@ import NavbarComponent from './Navbar';
 
 export default function NavbarWrapper() {
     const pathname = usePathname();
-    if(pathname === '/dashboard'){
+    if(pathname === '/dashboard' || pathname === '/dataTable'){
         return null;
     }
   return (

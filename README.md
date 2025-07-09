@@ -43,6 +43,8 @@ Visit http://localhost:3000 to view your project in the browser.
 ### 🧭 Routing Features
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
+| Group Routing      | `(admin)` | organize routes by category or team                     |
+| Parallel Routing   | `@modal` | render one or more pages within the same layout          |
 | Intercepting Route | `/photos` | Using intercepting and parallel routes with route groups |
 
 
