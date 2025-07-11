@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/app/loading";
 import { UserType } from "@/types/UserType";
 import React, { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
@@ -69,17 +70,37 @@ const columns: TableColumn<UserType>[] = [
   },
 ];
 
-
 export default function AdminDashboard() {
   const [search, setSearch] = useState("");
   const [users, setUsers] = useState<UserType[]>([]);
   const [filterUsers, setFilteredUsers] = useState<UserType[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}users`)
-      .then((res) => res.json())
-      .then((data) => setUsers(data.users))
-      .catch((error) => console.error("Error fetching data:", error));
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}users`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setUsers(data.users);
+        setFilteredUsers(data.users);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(
+          error instanceof Error ? error.message : "An unknown error occurred"
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -91,6 +112,17 @@ export default function AdminDashboard() {
     setFilteredUsers(filtered);
   }, [search, users]);
 
+  if (loading) {
+    return (
+      <Loading/>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-4 text-red-500 bg-red-100 rounded">Error: {error}</div>
+    );
+  }
 
   return (
     <div>
@@ -100,6 +132,7 @@ export default function AdminDashboard() {
         className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300 mt-2"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        disabled={loading}
       />
 
       <DataTable
@@ -108,6 +141,13 @@ export default function AdminDashboard() {
         data={filterUsers}
         selectableRows
         pagination
+        progressPending={loading}
+        progressComponent={<div className="py-4">Loading data...</div>}
+        noDataComponent={
+          <div className="py-4">
+            {search ? "No matching users found" : "No users available"}
+          </div>
+        }
       />
     </div>
   );

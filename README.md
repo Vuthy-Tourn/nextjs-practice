@@ -62,7 +62,9 @@ Visit http://localhost:3000 to view your project in the browser.
 ### 🧑🏻‍💼 Admin Dashboard
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
-| Admin dashboard    | `(admin)/dashboard`| datatable and sidebar in dashboard using shadcn   |
+| Admin dashboard    | `(admin)/dashboard`| datatable and sidebar using react datatable and shadcn   |
+| Data Table    | `(admin)/payment`| datatable using shadcn datatable                 |
+| Area Chart         | `(admin)/home`| Area Chart with raw data                            |
 
 ### 🗳️ Additional Files
 | Lesson             | Folder   | Description                                              |
