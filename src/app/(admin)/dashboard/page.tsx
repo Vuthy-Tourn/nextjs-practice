@@ -1,6 +1,7 @@
 "use client";
 import Loading from "@/app/loading";
 import { UserType } from "@/types/UserType";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 
@@ -19,10 +20,12 @@ const columns: TableColumn<UserType>[] = [
   {
     name: "Image",
     cell: (row: UserType) => (
-      <img
+      <Image
         src={row.image}
         alt={row.firstName + " " + row.lastName}
         width={50}
+        height={50}
+        unoptimized
       />
     ),
     width: "130px",

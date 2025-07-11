@@ -26,7 +26,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { chartData } from "./data";
-export const description = "An interactive area chart";
 
 
 const chartConfig = {

@@ -1,7 +1,6 @@
 import { ProductType } from "@/types/ProductType";
 import { columns } from "./column";
 import { DataTable } from "./data-table";
-import { UserType } from "@/types/UserType";
 
 async function getData(): Promise<ProductType[]> {
   try {

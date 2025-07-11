@@ -65,7 +65,7 @@ export default function AdminDashboard() {
           `${data.title}`.toLowerCase().includes(search.toLowerCase())
       );
       setFilteredMovies(filtered);
-  },[search, data]);
+  },[search]);
 
   return (
     <div>

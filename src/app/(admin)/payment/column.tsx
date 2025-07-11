@@ -12,8 +12,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
-import { UserType } from "@/types/UserType";
 import { ProductType } from "@/types/ProductType";
+import Image from "next/image";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 // export type Payment = {
@@ -50,10 +50,13 @@ export const columns: ColumnDef<ProductType>[] = [
     cell: ({ row }) => {
       const thumbnailUrl = row.getValue("thumbnail") as string;
       return (
-        <img
+        <Image
           src={thumbnailUrl}
           alt="Thumbnail"
           className="h-12 w-12 object-cover rounded-md"
+          width={50}
+          height={50}
+          unoptimized
         />
       );
     },
