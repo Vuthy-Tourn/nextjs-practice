@@ -13,13 +13,13 @@ export default async function page() {
   const data = await res.json();
   const products: ProductType[] = data.products;
   return (
-    <section className="bg-gray-50 min-h-screen py-16 px-6">
+    <section className="min-h-screen py-16 px-6">
       {/* <!-- Hero --> */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
           Explore Our Premium Gear
         </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
           Top-rated tech and lifestyle essentials to power your day. Free
           shipping on all orders above $50.
         </p>

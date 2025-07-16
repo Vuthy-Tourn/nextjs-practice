@@ -42,7 +42,7 @@ export default function BlogPostPage() {
   return (
     <div className="relative p-4">
       <div className="max-w-3xl mx-auto">
-        <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+        <div className="mt-3 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
           <div>
             <div className="mb-4">
               {post.tags

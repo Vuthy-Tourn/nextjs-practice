@@ -29,7 +29,7 @@ export default function NextJSHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -56,8 +56,8 @@ export default function NextJSHome() {
               onClick={() => setActiveModule(module.id)}
               className={`p-6 rounded-xl cursor-pointer transition-all ${
                 activeModule === module.id
-                  ? "bg-white shadow-lg border-2 border-blue-500"
-                  : "bg-white shadow-md hover:shadow-lg"
+                  ? "shadow-lg border-2 border-blue-500"
+                  : "shadow-md hover:shadow-lg"
               }`}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -66,7 +66,9 @@ export default function NextJSHome() {
                 </div>
                 <h3 className="text-xl font-semibold">{module.title}</h3>
               </div>
-              <p className="text-gray-600">{module.description}</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                {module.description}
+              </p>
               {activeModule === module.id && (
                 <div className="mt-4 flex items-center text-sm text-green-600">
                   <CheckCircle size={16} className="mr-1" />
@@ -78,12 +80,12 @@ export default function NextJSHome() {
         </div>
 
         {/* Interactive Playground */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="rounded-xl shadow-lg overflow-hidden">
           <div className="p-6 border-b">
             <h2 className="text-2xl font-bold mb-4 text-blue-800">
               {modules.find((l) => l.id === activeModule)?.title}
             </h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6 dark:text-gray-400">
               {modules.find((l) => l.id === activeModule)?.description}
             </p>
           </div>
@@ -135,8 +137,8 @@ export default function NextJSHome() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
+      <footer className=" py-8 mt-12">
+        <div className="max-w-7xl mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
           <p>© {new Date().getFullYear()} Next.js Learning Platform</p>
           <div className="flex justify-center gap-6 mt-4">
             <Link href="/about" className="hover:text-blue-600">

@@ -53,6 +53,11 @@ Visit http://localhost:3000 to view your project in the browser.
 | ------------------ | -------- | -------------------------------------------------------- |
 | Two fonts and languages| `/`      | Local font and Google font (Khmer and English)       |
 
+### 🌙 Theme
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| Darkmode Theme     | `/`      | using `skiper/ui` for darkmode theme                       |
+
 ### 🪢 Dynamic MetaData
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |

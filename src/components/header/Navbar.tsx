@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navLinks } from "./menu";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import ThemeToggleButton from "../ui/theme-toggle-button";
 // const Navbar = styled.nav`
 //   background-color: #333;
 //   padding: 10px;
@@ -52,6 +53,7 @@ export default function NavbarComponent() {
           >
             Download
           </Link>
+          <ThemeToggleButton />
           <button
             data-collapse-toggle="mobile-menu-2"
             type="button"
@@ -98,9 +100,9 @@ export default function NavbarComponent() {
                 <Link
                   key={index}
                   href={link.path}
-                        className={`block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 
+                  className={`block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 
                   ${
-                  isActive
+                    isActive
                       ? "text-purple-700 dark:text-purple-500"
                       : "text-gray-900 dark:text-white"
                   }`}

@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function ProductCard({id, title,description, price, thumbnail}:ProductType) {
   return (
-    <div key={id} className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden group cursor-pointer">
+    <div key={id} className=" rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden group cursor-pointer">
       <div className="relative">
         <Image
           src={thumbnail}

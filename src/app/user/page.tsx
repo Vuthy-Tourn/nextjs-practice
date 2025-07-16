@@ -43,18 +43,18 @@ export default function Page() {
   }
 
   return (
-    <section className="bg-gray-50 min-h-screen py-16 px-6">
+    <section className="min-h-screen py-16 px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
           User Profiles
         </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
           Explore user profiles and connect with the community.
         </p>
       </div>
       <div className="relative">
         <input
-          className="appearance-none border-2 pl-10 border-gray-300 hover:border-gray-400 transition-colors rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-purple-600 focus:border-purple-600 focus:shadow-outline"
+          className="appearance-none border-2 pl-10 border-gray-300 hover:border-gray-400 transition-colors rounded-md w-full py-2 px-3 text-gray-800 dark:text-white leading-tight focus:outline-none focus:ring-purple-600 focus:border-purple-600 focus:shadow-outline"
           id="username"
           type="text"
           value={searchTerm}

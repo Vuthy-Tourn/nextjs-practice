@@ -9,7 +9,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
   const allBlogs = use(blogs);
 
   return (
-    <div className="bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 p-4 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 p-4 max-w-7xl mx-auto">
       {allBlogs.map((blog) => (
         <Link key={blog.id} href={`/blog/${blog.id}`}>
           {/* Post Header */}
@@ -23,11 +23,14 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
                 height={20}
                 unoptimized
               />
-              <span className="text-sm font-semibold text-gray-900">
+              <span className="text-sm font-semibold text-gray-900 dark:text-gray-400">
                 username_here
               </span>
             </div>
-            <button aria-label="More options" className="text-gray-900">
+            <button
+              aria-label="More options"
+              className="text-gray-900 dark:text-gray-400"
+            >
               <svg
                 className="w-5 h-5"
                 fill="currentColor"
@@ -56,7 +59,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
             <div className="flex space-x-4">
               <button
                 aria-label="Like post"
-                className="text-gray-900 hover:text-gray-500"
+                className="text-gray-900 hover:text-gray-500 dark:text-gray-400"
               >
                 <svg
                   className="w-6 h-6"
@@ -75,7 +78,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
               </button>
               <button
                 aria-label="Comment on post"
-                className="text-gray-900 hover:text-gray-500"
+                className="text-gray-900 hover:text-gray-500 dark:text-gray-400"
               >
                 <svg
                   className="w-6 h-6"
@@ -92,7 +95,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
               </button>
               <button
                 aria-label="Share post"
-                className="text-gray-900 hover:text-gray-500"
+                className="text-gray-900 hover:text-gray-500 dark:text-gray-400"
               >
                 <svg
                   className="w-6 h-6"
@@ -114,7 +117,7 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
             </div>
             <button
               aria-label="Save post"
-              className="text-gray-900 hover:text-gray-500"
+              className="text-gray-900 hover:text-gray-500 dark:text-gray-400"
             >
               <svg
                 className="w-6 h-6"
@@ -135,17 +138,17 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
 
           {/* Likes Count */}
           <div className="px-4 pb-2">
-            <p className="text-sm font-semibold text-gray-900">
+            <p className="text-sm font-semibold text-gray-900 dark:text-gray-400">
               {blog.reactions.likes} likes
             </p>
           </div>
 
           {/* Caption */}
           <div className="px-4 pb-2">
-            <h5 className="font-semibold hover:underline line-clamp-1 text-gray-900">
+            <h5 className="font-semibold hover:underline line-clamp-1 text-gray-900 dark:text-gray-400">
               {blog.title}
             </h5>
-            <p className="text-sm line-clamp-3 text-gray-900">
+            <p className="text-sm line-clamp-3 text-gray-900 dark:text-gray-400">
               {blog.body} #coding #tailwindcss #webdev
             </p>
           </div>
