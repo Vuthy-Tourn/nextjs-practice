@@ -62,6 +62,7 @@ Visit http://localhost:3000 to view your project in the browser.
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
 | Register       | `/register`      | using react-hook-form with zod                       |
+| Login       | `/login`      | using react-hook-form with zod                       |
 
 ### 🪢 Dynamic MetaData
 | Lesson             | Folder   | Description                                              |

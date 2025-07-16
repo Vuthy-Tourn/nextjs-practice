@@ -12,6 +12,7 @@ export default function NavbarWrapper() {
       "/payment",
       "/register",
       "/login",
+      "/file"
     ];
     const shouldHideNavbar = hiddenPaths.some(
       (path) => pathname === path || pathname.startsWith(`${path}/`)
