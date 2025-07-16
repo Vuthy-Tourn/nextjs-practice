@@ -56,7 +56,12 @@ Visit http://localhost:3000 to view your project in the browser.
 ### 🌙 Theme
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
-| Darkmode Theme     | `/`      | using `skiper/ui` for darkmode theme                       |
+| Darkmode Theme     | `/`      | using `skiper/ui` for darkmode theme                     |
+
+### 🔐 Authentication
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| Register       | `/register`      | using react-hook-form with zod                       |
 
 ### 🪢 Dynamic MetaData
 | Lesson             | Folder   | Description                                              |
