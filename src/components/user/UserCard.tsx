@@ -1,6 +1,5 @@
 import { UserType } from '@/types/UserType'
 import Image from 'next/image'
-import Link from 'next/link';
 import React from 'react'
 
 export default function UserCard({id, firstName, lastName, role, image, university}:UserType) {
@@ -27,7 +26,7 @@ export default function UserCard({id, firstName, lastName, role, image, universi
           {role}
         </p>
         <p className="text-gray-600 mb-4">{university}</p>
-        <div className="flex justify-center space-x-4 mb-6">
+        {/* <div className="flex justify-center space-x-4 mb-6">
           <Link
             href="#"
             className="text-gray-600 hover:text-indigo-800 dark:hover:text-indigo-400 transition-colors duration-300"
@@ -75,7 +74,7 @@ export default function UserCard({id, firstName, lastName, role, image, universi
               ></path>
             </svg>
           </Link>
-        </div>
+        </div> */}
         <div className="flex justify-center space-x-2">
           <span className="px-3 py-1 text-sm bg-indigo-100 text-indigo-800 rounded-full transition-colors duration-300 hover:bg-indigo-800 hover:text-white dark:bg-indigo-900 dark:text-indigo-200 dark:hover:bg-indigo-700">
             JavaScript

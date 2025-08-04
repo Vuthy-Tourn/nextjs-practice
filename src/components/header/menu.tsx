@@ -8,4 +8,5 @@ export const navLinks: MenuLink[] = [
   { name: "Photos", path: "/photos", active: false },
   { name: "Blog", path: "/blog", active: false },
   { name:"Recipes", path: "/recipe", active: false },
+  { name: "Quotes", path: "/quote", active: false },
 ];

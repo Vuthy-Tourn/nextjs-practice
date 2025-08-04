@@ -35,7 +35,7 @@ Visit http://localhost:3000 to view your project in the browser.
 | Lesson          | Folder    | Description                                                    |
 | --------------- | --------- | -------------------------------------------------------------- |
 | Client Fetching | `/user`    | Fetching data using `useEffect` from the client-side           |
-| Server Fetching | `/product` | Using `getServerSideProps` or `getStaticProps` for prefetching |
+| Server Fetching | `/quote` | Using fetch and async and await function|
 | use Hook        | `/blog`    | Creating custom reusable React hooks for fetching data         |
 | use SWR         | `/recipe`  | Implementing client-side fetching with caching using SWR       |
 | useParams         | `/blog/${id}`  | read a route's dynamic params filled in by the current URL. |
@@ -58,11 +58,16 @@ Visit http://localhost:3000 to view your project in the browser.
 | ------------------ | -------- | -------------------------------------------------------- |
 | Darkmode Theme     | `/`      | using `skiper/ui` for darkmode theme                     |
 
-### 🔐 Authentication
+### 🔒 Authentication
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
 | Register       | `/register`      | using react-hook-form with zod                       |
-| Login       | `/login`      | using react-hook-form with zod                       |
+| Login       | `/login`      | using react-hook-form with zod                             |
+
+### 🔐 Authentication
+| Lesson             | Folder   | Description                                              |
+| ------------------ | -------- | -------------------------------------------------------- |
+| Keycloak       | `/lib/auth`      | using next-auth with keycloak                        |
 
 ### 🪢 Dynamic MetaData
 | Lesson             | Folder   | Description                                              |

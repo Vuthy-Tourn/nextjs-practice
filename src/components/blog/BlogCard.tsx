@@ -155,12 +155,12 @@ export default function BlogCard({ blogs }: { blogs: Promise<BlogType[]> }) {
 
           {/* View Comments */}
 
-          <Link
+          {/* <Link
             href="#"
             className="text-sm text-gray-500 dark:text-gray-400 hover:underline px-4 pb-2"
           >
             View all {blog.views} comments
-          </Link>
+          </Link> */}
 
           {/* Add Comment */}
           <div className="px-4 pb-4 border-t insta-border mt-2 pt-3">

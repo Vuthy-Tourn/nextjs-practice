@@ -3,8 +3,8 @@
 import RecipeCard from "@/components/recipe/RecipeCard";
 import { RecipeType } from "@/types/RecipeType";
 import React from "react";
-import  useSWR  from "swr"; 
-import Loading from "@/app/loading";
+import useSWR from "swr";
+import Loading from "../loading";
 
 const fetcher = (url: string): Promise<RecipeType[]> =>
   fetch(url)

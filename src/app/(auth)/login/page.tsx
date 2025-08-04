@@ -68,7 +68,7 @@ export default function LoginPage() {
 
       if (response.ok) {
         await login(responseData.token, responseData.user);
-        router.push("/dashboard");
+        router.push("/home");
       } else {
         setError(responseData.error || "Login failed");
       }

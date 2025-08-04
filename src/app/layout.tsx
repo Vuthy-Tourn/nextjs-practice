@@ -9,6 +9,7 @@ import localFont from "next/font/local";
 import NavbarWrapper from "@/components/header/NavbarWrapper";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { AuthProvider } from "@/contexts/auth-context";
+import { Providers } from "@/lib/providers";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -58,17 +59,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={` ${ubuntu.variable} ${khmerFont.variable} antialiased`}>
-        <AuthProvider>
-          <ErrorBoundary errorComponent={Error}>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <NavbarWrapper />
-              <Suspense fallback={<Loading />}>
-                {modal}
-                {children}
-              </Suspense>
-            </ThemeProvider>
-          </ErrorBoundary>
-        </AuthProvider>
+        <Providers>
+          <AuthProvider>
+            <ErrorBoundary errorComponent={Error}>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+              >
+                <NavbarWrapper />
+                <Suspense fallback={<Loading />}>
+                  {modal}
+                  {children}
+                </Suspense>
+              </ThemeProvider>
+            </ErrorBoundary>
+          </AuthProvider>
+        </Providers>
         {/* <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script> */}
       </body>
     </html>

@@ -2,10 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BookOpen, Code, Server, CheckCircle } from "react-feather";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function NextJSHome() {
   const [count, setCount] = useState(0);
   const [activeModule, setActiveModule] = useState("fundamentals");
+  const router = useRouter();
 
   const modules = [
     {
@@ -43,6 +46,7 @@ export default function NextJSHome() {
             Interactive learning platform to master Next.js concepts through
             hands-on examples
           </p>
+          <Button className="m-4 cursor-pointer" onClick={()=> router.push("/user-profile")}>User Profile</Button>
         </div>
       </div>
 
