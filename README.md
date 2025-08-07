@@ -67,7 +67,7 @@ Visit http://localhost:3000 to view your project in the browser.
 ### 🔐 Authentication
 | Lesson             | Folder   | Description                                              |
 | ------------------ | -------- | -------------------------------------------------------- |
-| Keycloak       | `/lib/auth`      | using next-auth with keycloak                        |
+| Keycloak       | `/lib/auth`  | using next-auth with keycloak (Github, Google, Facebook and default keycloak ) |
 
 ### 🪢 Dynamic MetaData
 | Lesson             | Folder   | Description                                              |
